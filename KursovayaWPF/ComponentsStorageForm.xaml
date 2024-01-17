@@ -1,0 +1,27 @@
+﻿<Window x:Class="KursovayaWPF.ComponentsStorageForm"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:KursovayaWPF"
+        mc:Ignorable="d"
+        Title="ComponentsStorageForm" Height="450" Width="984">
+	<Grid Margin="0,0,10,0">
+		<DataGrid x:Name="dataGrid" AutoGenerateColumns="False" Margin="10" SelectionChanged="dataGrid_SelectionChanged" >
+			<DataGrid.Columns>
+				<DataGridTextColumn Header="Артикул" Binding="{Binding Article}" />
+				<DataGridTextColumn Header="Наименование" Binding="{Binding Name}" />
+				<DataGridTextColumn Header="Ед. измерения" Binding="{Binding Unit}" />
+				<DataGridTextColumn Header="Норма амортизации" Binding="{Binding AmortizationRate}" />
+				<DataGridTextColumn Header="Метод начисления амортизации" Binding="{Binding AmortizationMethod}" />
+				<DataGridTextColumn Header="Первоначальная стоимость единицы (без НДС)" Binding="{Binding InitialCost}" />
+				<DataGridTextColumn Header="Накопленный износ" Binding="{Binding AccumulatedDepreciation}" />
+			</DataGrid.Columns>
+			<StackPanel></StackPanel>
+		</DataGrid>
+
+		<StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="10">
+			<Button Content="Удалить" Command="{Binding DeleteCommand}" Margin="5" Click="Button_Click"/>
+		</StackPanel>
+	</Grid>
+</Window>

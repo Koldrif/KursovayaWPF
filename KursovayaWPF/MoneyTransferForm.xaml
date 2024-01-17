@@ -1,0 +1,60 @@
+﻿<Window x:Class="KursovayaWPF.MoneyTransferForm"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:KursovayaWPF"
+        mc:Ignorable="d"
+        Title="MoneyTransferForm" Height="450" Width="800">
+	<Grid>
+		<StackPanel Margin="10">
+			<StackPanel Orientation="Horizontal" Margin="0,0,0,10">
+				<Label Content="Номер:"/>
+				<TextBox Width="200" Name="NumberTextBox"/>
+			</StackPanel>
+
+			<StackPanel Orientation="Horizontal" Margin="0,0,0,10">
+				<Label Content="Дата:"/>
+				<DatePicker Width="200" Name="DateDatePicker"/>
+			</StackPanel>
+
+			<StackPanel Orientation="Horizontal" Margin="0,0,0,10">
+				<Label Content="Банк отправитель:"/>
+				<TextBox Width="200" Name="SenderBankTextBox"/>
+			</StackPanel>
+
+			<StackPanel Orientation="Horizontal" Margin="0,0,0,10">
+				<Label Content="Банк получатель:"/>
+				<TextBox Width="200" Name="ReceiverBankTextBox"/>
+			</StackPanel>
+
+			<StackPanel Orientation="Horizontal" Margin="0,0,0,10">
+				<Label Content="Контрагент отправитель:"/>
+				<TextBox Width="200" Name="SenderCounterpartyTextBox"/>
+			</StackPanel>
+
+			<StackPanel Orientation="Horizontal" Margin="0,0,0,10">
+				<Label Content="Контрагент получатель:"/>
+				<TextBox Width="200" Name="ReceiverCounterpartyTextBox"/>
+			</StackPanel>
+
+			<StackPanel Orientation="Horizontal" Margin="0,0,0,10">
+				<Label Content="Сумма полученная:"/>
+				<TextBox Width="200" Name="ReceivedAmountTextBox"/>
+			</StackPanel>
+
+			<StackPanel Orientation="Horizontal" Margin="0,0,0,10">
+				<Label Content="Сумма оплаченная:"/>
+				<TextBox Width="200" Name="PaidAmountTextBox"/>
+			</StackPanel>
+
+			<StackPanel Orientation="Horizontal" Margin="0,0,0,10">
+				<Label Content="Формулировка платежа:"/>
+				<TextBox Width="200" Name="PaymentDescriptionTextBox"/>
+			</StackPanel>
+
+			<Button Content="Сохранить" Width="100" HorizontalAlignment="Left" Click="Button_Click"/>
+			<Button Content="Отмена" Width="100" HorizontalAlignment="Left" Click="Button_Click_1"  />
+		</StackPanel>
+	</Grid>
+</Window>

@@ -1,0 +1,56 @@
+﻿<Window x:Class="KursovayaWPF.ManufactorOrderForm"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:KursovayaWPF"
+        mc:Ignorable="d"
+        Title="ManufactorOrderForm" Height="450" Width="800">
+	<Grid>
+		<Grid.ColumnDefinitions>
+			<ColumnDefinition Width="Auto"/>
+			<ColumnDefinition Width="*"/>
+		</Grid.ColumnDefinitions>
+
+		<!-- Левая часть: Данные о производственном заказе -->
+		<StackPanel Grid.Column="0" Margin="10">
+			<TextBlock Text="Номер Производственного Заказа:"/>
+			<TextBox Text="{Binding ProductionOrderNumber, UpdateSourceTrigger=PropertyChanged}" Margin="0,0,0,10"/>
+
+			<TextBlock Text="Дата регистрации Производственного Заказа:"/>
+			<DatePicker SelectedDate="{Binding RegistrationDate, UpdateSourceTrigger=PropertyChanged}" Margin="0,0,0,10"/>
+
+			<TextBlock Text="Вид ГП или сервисных услуг:"/>
+			<ComboBox Margin="0,0,0,10" SelectedIndex="0">
+				<ComboBoxItem Content="Пусконаладочные работы"/>
+				<ComboBoxItem Content="Гарантийный ремонт"/>
+				<ComboBoxItem Content="Постгарантийный ремонт"/>
+			</ComboBox>
+
+			<TextBlock Text="Ресурсная спецификация:"/>
+			<TextBox Text="{Binding ResourceSpecification, UpdateSourceTrigger=PropertyChanged}" Margin="0,0,0,10"/>
+			<StackPanel>
+				<Button Content="Удалить" Click="Button_Click"></Button>
+				<Button Content="Добавить" Click="Button_Click_1"></Button>
+			</StackPanel>
+		</StackPanel>
+
+		<!-- Правая часть: Этапы, материалы, бригадир -->
+		<StackPanel Grid.Column="1" Margin="10">
+			<TextBlock Text="Этапы выполнения готовой продукции:"/>
+			<ListBox  SelectionMode="Multiple" Margin="0,0,0,10" IsEnabled="False">
+				<ListBoxItem Content="Этап 1"/>
+				<ListBoxItem Content="Этап 2"/>
+				<ListBoxItem Content="Этап 3"/>
+			</ListBox>
+
+
+			<TextBlock Text="Дата поступления на склад ГП:"/>
+			<DatePicker SelectedDate="{Binding ArrivalDate, UpdateSourceTrigger=PropertyChanged}" Margin="0,0,0,10"/>
+
+			<TextBlock Text="Бригадир (ФИО):"/>
+			<TextBox Text="{Binding ForemanName, UpdateSourceTrigger=PropertyChanged}" Margin="0,0,0,10"/>
+			<Button Content="Сохранить" Click="Button_Click_2"></Button>
+		</StackPanel>
+	</Grid>
+</Window>
